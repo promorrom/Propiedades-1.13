@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Raul Naranjo/Desktop/Projects/Servers/patched_1.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raul Naranjo/Desktop/Projects/Servers/worldedit-bukkit-7.1.0-SNAPSHOT-dist.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raul Naranjo/Desktop/Projects/Servers/worldguard-bukkit-7.0.1-SNAPSHOT-dist (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raul Naranjo/Desktop/Projects/Servers/TokenManager-3.2.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
