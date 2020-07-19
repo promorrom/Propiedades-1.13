@@ -84,9 +84,7 @@ public class InfoPanel {
 			sclore.add(" ");
 			sclore.add("§7Click para comprar esta propiedad");
 			sclore.add(" ");
-			sclore.add("§7Precio§r:");
-			sclore.add(" ");
-			sclore.add(main.format(prop.price()));
+			sclore.add("§7Precio: "+main.format(prop.price()));
 			sclore.add(" ");
 			sclore.add("§8§m----------------------------------");
 			scm.setLore(sclore);
