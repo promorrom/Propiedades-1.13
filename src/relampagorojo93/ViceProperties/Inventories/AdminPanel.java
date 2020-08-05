@@ -7,7 +7,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-
 import relampagorojo93.ViceProperties.PropertiesMain;
 import relampagorojo93.ViceProperties.Properties.PropData;
 
@@ -34,13 +33,13 @@ public class AdminPanel {
 		//Name Item
 		ItemStack n = new ItemStack(Material.OAK_SIGN);
 		ItemMeta nm = n.getItemMeta();
-		nm.setDisplayName("§aNombre: §r" + prop.name());
+		nm.setDisplayName("§aNombre: §f" + prop.name());
 		n.setItemMeta(nm);
 		inv.setItem(19, n);
 		//Price Item
 		ItemStack p = new ItemStack(Material.GHAST_TEAR);
 		ItemMeta pm = p.getItemMeta();
-		pm.setDisplayName("§cPrecio: §r" + main.format(prop.price()));
+		pm.setDisplayName("§cPrecio: §f" + main.format(prop.price()));
 		p.setItemMeta(pm);
 		inv.setItem(21, p);
 		//Remove Owner Item
@@ -52,7 +51,7 @@ public class AdminPanel {
 		//Chest Items
 		ItemStack c = new ItemStack(Material.CHEST);
 		ItemMeta cm = c.getItemMeta();
-		cm.setDisplayName("§6Cofres: §r" + prop.chests());
+		cm.setDisplayName("§6Cofres: §f" + prop.chests());
 		c.setItemMeta(cm);
 		inv.setItem(23, c);
 		ItemStack ic = new ItemStack(Material.LIME_DYE);
@@ -68,7 +67,7 @@ public class AdminPanel {
 		//Members Max Items
 		ItemStack d = new ItemStack(Material.PLAYER_HEAD, 1);
 		ItemMeta dm = d.getItemMeta();
-		dm.setDisplayName("§7Máximo de huéspedes: §r" + prop.membersmax());
+		dm.setDisplayName("§7Máximo de huéspedes: §f" + prop.membersmax());
 		d.setItemMeta(dm);
 		inv.setItem(25, d);
 		ItemStack id = new ItemStack(Material.LIME_DYE);

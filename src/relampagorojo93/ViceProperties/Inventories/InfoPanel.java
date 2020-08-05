@@ -64,10 +64,10 @@ public class InfoPanel {
 		List<String> ilore = new ArrayList<>();
 		ilore.add("§8§m----------------------------------");
 		ilore.add(" ");
-		ilore.add("§7Nombre§r: " + prop.name());
-		ilore.add("§7Dueño§r: " + (owner != null ? owner : "Sin dueño"));
-		ilore.add("§7Contenedores§r: " + prop.chests());
-		ilore.add("§7Máximo de huéspedes§r: " + prop.membersmax());
+		ilore.add("§7Nombre§f: " + prop.name());
+		ilore.add("§7Dueño§f: " + (owner != null ? owner : "Sin dueño"));
+		ilore.add("§7Contenedores§f: " + prop.chests());
+		ilore.add("§7Máximo de huéspedes§f: " + prop.membersmax());
 		ilore.add(" ");
 		ilore.add("§8§m----------------------------------");
 		im.setLore(ilore);
