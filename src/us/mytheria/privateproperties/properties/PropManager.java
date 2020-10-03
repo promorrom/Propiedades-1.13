@@ -1,4 +1,4 @@
-package relampagorojo93.ViceProperties.Properties;
+package us.mytheria.privateproperties.properties;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 
-import relampagorojo93.ViceProperties.PropertiesMain;
+import us.mytheria.privateproperties.PropertiesMain;
 
 public class PropManager {
 	PropertiesMain main;

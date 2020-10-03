@@ -2,9 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/luben/Desktop/pls/TokenManager-3.2.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/luben/Desktop/pls/worldedit-bukkit-7.2.0-SNAPSHOT-dist.jar"/>
-	<classpathentry kind="lib" path="C:/Users/luben/Desktop/pls/worldguard-bukkit-7.0.3-SNAPSHOT-dist.jar"/>
-	<classpathentry kind="lib" path="C:/Users/luben/Desktop/pls/patched_1.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/luben/Desktop/Workspace/Libraries/patched_1.16.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/luben/Desktop/Workspace/Libraries/Properties/TokenManager-3.2.5 (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/luben/Desktop/Workspace/Libraries/Properties/worldedit-bukkit-7.2.0-beta-05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/luben/Desktop/Workspace/Libraries/Properties/worldguard-bukkit-7.0.4-SNAPSHOT-dist.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

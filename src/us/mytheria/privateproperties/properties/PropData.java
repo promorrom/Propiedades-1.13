@@ -1,4 +1,4 @@
-package relampagorojo93.ViceProperties.Properties;
+package us.mytheria.privateproperties.properties;
 
 import org.bukkit.Location;
 

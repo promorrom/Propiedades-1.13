@@ -1,4 +1,4 @@
-package relampagorojo93.ViceProperties;
+package us.mytheria.privateproperties;
 
 import java.io.File;
 
@@ -6,7 +6,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 public class FileManager {
 	PropertiesMain main;
-	File path = new File("plugins/Propiedades");
+	File path = new File("plugins/PublicProperties");
 	public File lang = new File(path.getPath() + "/lang.yml");
 	public File properties = new File(path.getPath() + "/Properties");
 	public FileManager(PropertiesMain main) {

@@ -1,4 +1,4 @@
-package relampagorojo93.ViceProperties.Inventories;
+package us.mytheria.privateproperties.inventories;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,8 +16,8 @@ import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 
-import relampagorojo93.ViceProperties.PropertiesMain;
-import relampagorojo93.ViceProperties.Properties.PropData;
+import us.mytheria.privateproperties.PropertiesMain;
+import us.mytheria.privateproperties.properties.PropData;
 
 public class PropPanel {
 	PropertiesMain main;

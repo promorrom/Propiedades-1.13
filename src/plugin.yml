@@ -1,8 +1,8 @@
-main: relampagorojo93.ViceProperties.PropertiesMain
-name: Propiedades
-author: relampagorojo93
+main: us.mytheria.privateproperties.PropertiesMain
+name: PrivateProperties
+author: ProMoRRom
 version: 1.0
-api-version: 1.13
+api-version: 1.16
 description: ViceProperties
 depend: [WorldGuard, WorldEdit, TokenManager]
 

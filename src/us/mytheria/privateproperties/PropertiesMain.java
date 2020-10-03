@@ -1,4 +1,4 @@
-package relampagorojo93.ViceProperties;
+package us.mytheria.privateproperties;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -10,10 +10,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import me.realized.tokenmanager.api.TokenManager;
-import relampagorojo93.ViceProperties.Inventories.AdminPanel;
-import relampagorojo93.ViceProperties.Inventories.InfoPanel;
-import relampagorojo93.ViceProperties.Inventories.PropPanel;
-import relampagorojo93.ViceProperties.Properties.PropManager;
+import us.mytheria.privateproperties.inventories.AdminPanel;
+import us.mytheria.privateproperties.inventories.InfoPanel;
+import us.mytheria.privateproperties.inventories.PropPanel;
+import us.mytheria.privateproperties.properties.PropManager;
 
 public class PropertiesMain extends JavaPlugin{
 	public String version = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];

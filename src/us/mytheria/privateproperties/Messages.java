@@ -1,4 +1,4 @@
-package relampagorojo93.ViceProperties;
+package us.mytheria.privateproperties;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 

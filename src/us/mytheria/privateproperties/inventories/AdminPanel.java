@@ -1,4 +1,4 @@
-package relampagorojo93.ViceProperties.Inventories;
+package us.mytheria.privateproperties.inventories;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -7,8 +7,8 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import relampagorojo93.ViceProperties.PropertiesMain;
-import relampagorojo93.ViceProperties.Properties.PropData;
+import us.mytheria.privateproperties.PropertiesMain;
+import us.mytheria.privateproperties.properties.PropData;
 
 public class AdminPanel {
 	PropertiesMain main;
