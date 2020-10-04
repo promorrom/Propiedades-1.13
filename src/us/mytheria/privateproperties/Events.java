@@ -24,7 +24,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.Inventory;
 
-import org.bukkit.scheduler.BukkitRunnable;
+//import org.bukkit.scheduler.BukkitRunnable;
 
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldguard.WorldGuard;
@@ -213,20 +213,21 @@ public class Events implements Listener{
 					case 24:
 						pl.closeInventory();
 						if (pr != null) {
-							if (pr.getOwners().getPlayers().isEmpty()) {
+							if (pr.getOwners().getUniqueIds().isEmpty()) {
 								long tokens = main.tm.getTokens(pl).getAsLong();
 								long restantes = prop.price() - tokens;
 								String hilorestantes = Long.toString(restantes);
 								if (tokens >= prop.price()) {
 									main.tm.removeTokens(pl.getName(), (long) prop.price(), true);
 									pr.getOwners().addPlayer(pl.getUniqueId());
-									pl.sendTitle("§a§lAPROBADO", "§7Has comprado " + prop.name(), 20, 40, 20);
+									//pl.sendTitle("§a§lAPROBADO", "§7Has comprado " + prop.name(), 20, 40, 20);
+									pl.sendTitle("§a§lAPROBADO", "§7Has comprado la propiedad", 20, 40, 20);
 								}
-								else pl.sendTitle("§c§lDENEGADO", "§7Faltan "+ ChatColor.WHITE + hilorestantes + " §7permisos", 20, 40, 20);
+								else pl.sendTitle("§c§lDENEGADO", "§7Faltan "+ ChatColor.WHITE + hilorestantes + " §7fichas reales", 20, 40, 20);
 							}
-							else pl.sendMessage("Comming soon");
+							else pl.sendTitle("§c§lPRÓXIMAMENTE", "§7", 20, 40, 20);
 						}else{
-							e.getWhoClicked().sendMessage("Error, contacta a Developer (pr == null)");
+							pl.sendMessage("Error, contacta a Developer (pr == null)");
 						}
 					default:
 						break;
@@ -239,6 +240,7 @@ public class Events implements Listener{
 				RegionManager rm = container.get(BukkitAdapter.adapt(e.getWhoClicked().getWorld()));
 				e.setCancelled(true);
 				switch(e.getSlot()) {
+				/*
 					case 19:
 						pl.closeInventory();
 						this.name.put(pl.getName(), pl.getWorld().getName() + "%" + region);
@@ -265,6 +267,7 @@ public class Events implements Listener{
 							}
 						}.runTaskTimer(main, 20L, 20L);
 						break;
+						*/
 					case 22:
 						pl.closeInventory();
 						rm.getRegion(region).getOwners().clear();

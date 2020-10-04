@@ -61,78 +61,91 @@ public class Command implements CommandExecutor {
 	}
 	@Override
 	public boolean onCommand(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args) {
-		if (args.length != 0 ) {
-			if (args[0].equalsIgnoreCase("add")) {
-				if (sender.hasPermission("ViceProperties.Add")) {
-					if (sender instanceof Player) {
-						Player pl = (Player) sender;
-						if (args.length >= 2) {
-							if (!main.pm.hasProperty(pl.getWorld(), args[1])) {
-								main.pm.createProperty(pl.getWorld(), args[1]);
-								sender.sendMessage(main.messages.applyPrefix(main.messages.propadded));
+		if (sender.hasPermission("PrivateProperties.Manager")) {
+			if (args.length != 0 ) {
+				if (args[0].equalsIgnoreCase("add")) {
+					if (sender.hasPermission("PrivateProperties.Add")) {
+						if (sender instanceof Player) {
+							Player pl = (Player) sender;
+							if (args.length >= 2) {
+								if (!main.pm.hasProperty(pl.getWorld(), args[1])) {
+									main.pm.createProperty(pl.getWorld(), args[1]);
+									sender.sendMessage(main.messages.applyPrefix(main.messages.propadded));
+								}
+								else sender.sendMessage(main.messages.applyPrefix(main.messages.propexists));
 							}
-							else sender.sendMessage(main.messages.applyPrefix(main.messages.propexists));
+							else sender.sendMessage(main.messages.applyPrefix("/ViceProp Add <Region Name>"));
 						}
-						else sender.sendMessage(main.messages.applyPrefix("/ViceProp Add <Region Name>"));
+						else sender.sendMessage(main.messages.applyPrefix(main.messages.consoledenied));
 					}
-					else sender.sendMessage(main.messages.applyPrefix(main.messages.consoledenied));
+					else sender.sendMessage(main.messages.applyPrefix(main.messages.nopermission));
 				}
-				else sender.sendMessage(main.messages.applyPrefix(main.messages.nopermission));
-			}
-			else if (args[0].equalsIgnoreCase("remove")) {
-				if (sender.hasPermission("ViceProperties.Remove")) {
-					if (sender instanceof Player) {
-						Player pl = (Player) sender;
-						if (args.length >= 2) {
-							if (main.pm.hasProperty(pl.getWorld(), args[1])) {
-								main.pm.removeProperty(pl.getWorld(), args[1]);
-								sender.sendMessage(main.messages.applyPrefix(main.messages.propremoved));
+				else if (args[0].equalsIgnoreCase("remove")) {
+					if (sender.hasPermission("PrivateProperties.Remove")) {
+						if (sender instanceof Player) {
+							Player pl = (Player) sender;
+							if (args.length >= 2) {
+								if (main.pm.hasProperty(pl.getWorld(), args[1])) {
+									main.pm.removeProperty(pl.getWorld(), args[1]);
+									sender.sendMessage(main.messages.applyPrefix(main.messages.propremoved));
+								}
+								else sender.sendMessage(main.messages.applyPrefix(main.messages.propnotexists));
 							}
-							else sender.sendMessage(main.messages.applyPrefix(main.messages.propnotexists));
+							else sender.sendMessage(main.messages.applyPrefix("/ViceProp Remove <Region Name>"));
 						}
-						else sender.sendMessage(main.messages.applyPrefix("/ViceProp Remove <Region Name>"));
+						else sender.sendMessage(main.messages.applyPrefix(main.messages.consoledenied));
 					}
-					else sender.sendMessage(main.messages.applyPrefix(main.messages.consoledenied));
+					else sender.sendMessage(main.messages.applyPrefix(main.messages.nopermission));
 				}
-				else sender.sendMessage(main.messages.applyPrefix(main.messages.nopermission));
-			}
-			else if (args[0].equalsIgnoreCase("reload")) {
-				if (sender.hasPermission("ViceProperties.Reload")) {
-					main.unload();
-					main.load();
-					sender.sendMessage(main.messages.applyPrefix(main.messages.reload));
-				}
-				else sender.sendMessage(main.messages.applyPrefix(main.messages.nopermission));
-			}
-			else if (args[0].equalsIgnoreCase("home")) {
-				if (sender instanceof Player) {
-					Player pl = (Player) sender;
-					if (pl.hasPermission("ViceProperties.Home")) {
-						pl.openInventory(main.ppanel.getInventory(pl.getUniqueId(), 1));
-					}else{
+				else if (args[0].equalsIgnoreCase("reload")) {
+					if (sender.hasPermission("PrivateProperties.Reload")) {
+						main.unload();
+						main.load();
+						sender.sendMessage(main.messages.applyPrefix(main.messages.reload));
 					}
+					else sender.sendMessage(main.messages.applyPrefix(main.messages.nopermission));
 				}
-				else sender.sendMessage(main.messages.applyPrefix(main.messages.consoledenied));
-			}
-			else if (args[0].equalsIgnoreCase("sethome")) {
-				if (sender.hasPermission("ViceProperties.SetHome")) {
+				else if (args[0].equalsIgnoreCase("home")) {
 					if (sender instanceof Player) {
 						Player pl = (Player) sender;
-						RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
-						for (ProtectedRegion region: container.createQuery().getApplicableRegions(BukkitAdapter.adapt(pl.getLocation()))) {
-							if (main.pm.hasProperty(pl.getWorld(), region.getId())) {
-								PropData data = main.pm.getProperty(pl.getWorld(), region.getId());
-								data.setHome(pl.getLocation());
-								sender.sendMessage(main.messages.applyPrefix("Nueva ubicación assignada a la propiedad " + data.name()));
-								break;
-							}
-							else sender.sendMessage(main.messages.applyPrefix("No estás dentro de ninguna propiedad"));
+						if (pl.hasPermission("PrivateProperties.Home")) {
+							pl.openInventory(main.ppanel.getInventory(pl.getUniqueId(), 1));
+						}else{
 						}
 					}
 					else sender.sendMessage(main.messages.applyPrefix(main.messages.consoledenied));
 				}
-				else sender.sendMessage(main.messages.applyPrefix(main.messages.nopermission));
+				else if (args[0].equalsIgnoreCase("sethome")) {
+					if (sender.hasPermission("PrivateProperties.SetHome")) {
+						if (sender instanceof Player) {
+							Player pl = (Player) sender;
+							RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+							for (ProtectedRegion region: container.createQuery().getApplicableRegions(BukkitAdapter.adapt(pl.getLocation()))) {
+								if (main.pm.hasProperty(pl.getWorld(), region.getId())) {
+									PropData data = main.pm.getProperty(pl.getWorld(), region.getId());
+									data.setHome(pl.getLocation());
+									sender.sendMessage(main.messages.applyPrefix("Nueva ubicación assignada a la propiedad " + data.name()));
+									break;
+								}
+								else sender.sendMessage(main.messages.applyPrefix("No estás dentro de ninguna propiedad"));
+							}
+						}
+						else sender.sendMessage(main.messages.applyPrefix(main.messages.consoledenied));
+					}
+					else sender.sendMessage(main.messages.applyPrefix(main.messages.nopermission));
+				}
 			}
+		} else {
+			sender.sendMessage("Comando desconocido");
+		}
+		if (sender.hasPermission("PrivateProperties.User")) {
+			if (args.length != 0 ) {
+				if (args[0].equalsIgnoreCase("addmember")) {
+					
+				}
+			}
+		} else {
+			sender.sendMessage("Comando desconocido");
 		}
 		return true;
 	}

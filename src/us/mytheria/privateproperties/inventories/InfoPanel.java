@@ -25,7 +25,7 @@ public class InfoPanel {
 	public String invname;
 	public InfoPanel(PropertiesMain main) {
 		this.main = main;
-		invname = "§2§lPROPIEDADES";
+		invname = "§8§lPROPIEDADES";
 	}
 	public Inventory getInventory(World w, String region) {
 		//Creating Inventory
@@ -37,7 +37,7 @@ public class InfoPanel {
 		Iterator<UUID> owners = rm.getRegion(region).getOwners().getUniqueIds().iterator();
 		String owner = owners.hasNext() ? Bukkit.getOfflinePlayer(owners.next()).getName() : null;
 		//Refilling with Stained Glass Panes
-		ItemStack bp = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+		ItemStack bp = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
 		ItemMeta bpm = bp.getItemMeta();
 		bpm.setDisplayName(" ");
 		bp.setItemMeta(bpm);
@@ -64,7 +64,6 @@ public class InfoPanel {
 		List<String> ilore = new ArrayList<>();
 		ilore.add("§8§m----------------------------------");
 		ilore.add(" ");
-		ilore.add("§7Nombre§f: " + prop.name());
 		ilore.add("§7Dueño§f: " + (owner != null ? owner : "Sin dueño"));
 		ilore.add("§7Contenedores§f: " + prop.chests());
 		ilore.add("§7Máximo de huéspedes§f: " + prop.membersmax());

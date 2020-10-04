@@ -21,7 +21,7 @@ import us.mytheria.privateproperties.properties.PropData;
 
 public class PropPanel {
 	PropertiesMain main;
-	public String invname = "§e§lPropiedades";
+	public String invname = "§8§lPROPIEDADES ";
 	public PropPanel(PropertiesMain main) {
 		this.main = main;
 	}
@@ -30,7 +30,7 @@ public class PropPanel {
 		int max = (int) ((double) regions.size() / 45.99D);
 		if (max == 0) max = 1;
 		Inventory inv = Bukkit.createInventory(null, 54, invname + " " + p + "/" + max);
-		ItemStack bp = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+		ItemStack bp = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
 		ItemMeta bpm = bp.getItemMeta();
 		bpm.setDisplayName(" ");
 		bp.setItemMeta(bpm);

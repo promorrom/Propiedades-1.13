@@ -15,7 +15,7 @@ public class AdminPanel {
 	public String invname;
 	public AdminPanel(PropertiesMain main) {
 		this.main = main;
-		invname = "§a§lMANTENIMIENTO";
+		invname = "§8§lMANTENIMIENTO";
 	}
 	public Inventory getInventory(World w, String region) {
 		//Creating Inventory
@@ -23,7 +23,7 @@ public class AdminPanel {
 		//Getting property data
 		PropData prop = main.pm.getProperty(w, region);
 		//Refilling with Stained Glass Panes
-		ItemStack bp = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+		ItemStack bp = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
 		ItemMeta bpm = bp.getItemMeta();
 		bpm.setDisplayName(" ");
 		bp.setItemMeta(bpm);

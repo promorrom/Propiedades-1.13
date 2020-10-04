@@ -69,7 +69,7 @@ public class PropertiesMain extends JavaPlugin{
 		pm.unload();
 	}
 	//---------------------------------------------------------------------//
-	//Utils
+	// Utils
 	//---------------------------------------------------------------------//
 	public String format(int m) {
 		String result = "§f";
@@ -81,7 +81,7 @@ public class PropertiesMain extends JavaPlugin{
 				result = result + ",";
 			}
 		}
-		result += (m > 1 ? " Permisos" : " Permiso");
+		result += (m > 1 ? " Fichas reales" : " Ficha real");
 		return result;
 	}
 	public ItemStack setItemData(ItemStack item, String prop) {

@@ -21,13 +21,13 @@ public class Messages {
 	}
 	public void load() {
 		YamlConfiguration langYml = main.fm.getYml(main.fm.lang);
-		prefix = langYml.getString("Prefix").replaceAll("&", "ยง");
-		nopermission = langYml.getString(msg + "No-permission").replaceAll("&", "ยง");
-		consoledenied = langYml.getString(msg + "Console-denied").replaceAll("&", "ยง");
-		propadded = langYml.getString(msg + "Prop-added").replaceAll("&", "ยง");
-		propremoved = langYml.getString(msg + "Prop-removed").replaceAll("&", "ยง");
-		propexists = langYml.getString(msg + "Prop-exists").replaceAll("&", "ยง");
-		propnotexists = langYml.getString(msg + "Prop-not-exists").replaceAll("&", "ยง");
-		reload = langYml.getString(msg + "Reload").replaceAll("&", "ยง");
+		prefix = langYml.getString("Prefix").replaceAll("&", "ง");
+		nopermission = langYml.getString(msg + "No-permission").replaceAll("&", "ง");
+		consoledenied = langYml.getString(msg + "Console-denied").replaceAll("&", "ง");
+		propadded = langYml.getString(msg + "Prop-added").replaceAll("&", "ง");
+		propremoved = langYml.getString(msg + "Prop-removed").replaceAll("&", "ง");
+		propexists = langYml.getString(msg + "Prop-exists").replaceAll("&", "ง");
+		propnotexists = langYml.getString(msg + "Prop-not-exists").replaceAll("&", "ง");
+		reload = langYml.getString(msg + "Reload").replaceAll("&", "ง");
 	}
 }
